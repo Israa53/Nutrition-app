@@ -1,0 +1,124 @@
+<section class="list">
+    <section>
+        <h1>Nutrition List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Unit</th>
+                    <th scope="col">Food</th>
+                    <th scope="col">Calories</th>
+                    <th scope="col">Weight</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="listOfIngredients">
+                <tr *ngFor="let item of listOfIngredients.ingredients; let i = index">
+                    <td *ngIf="item.parsed && item.parsed.length">{{ item.parsed[0].quantity.toFixed(2) }}</td>
+                    <td *ngIf="item.parsed && item.parsed.length">{{ item.parsed[0].measure }}</td>
+                    <td *ngIf="item.parsed && item.parsed.length">{{ item.parsed[0].foodMatch }}</td>
+                    <td *ngIf="item.parsed && item.parsed.length">{{ item.parsed[0].nutrients.ENERC_KCAL.quantity.toFixed(2) }}
+                        {{ item.parsed[0].nutrients.ENERC_KCAL?.unit
+                        }}</td>
+                    <td *ngIf="item.parsed && item.parsed.length">{{ item.parsed[0].weight }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    
+    <section *ngIf="details">
+        <h1>Nutrition Facts</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th><b>Calories</b></th>
+                    <td>{{listOfIngredients.calories}}</td>
+                </tr>
+                <tr>
+                    <th><b>Fat</b></th>
+                    <td>{{listOfIngredients.totalNutrients.FAT?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.FAT?.unit }}</td>
+                </tr>
+                <tr>
+                    <th><b>Cholesterol</b></th>
+                    <td>{{ listOfIngredients.totalNutrients.CHOLE?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.CHOLE?.unit }}</td>
+                </tr>
+                <tr>
+                    <th><b>Sodium</b></th>
+                    <td>{{ listOfIngredients.totalNutrients.NA?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.NA?.unit }}</td>
+                </tr>
+    
+                <tr>
+                    <th><b>Carbohydrate</b> </th>
+                    <td>{{ listOfIngredients.totalNutrients.CHOCDF?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.CHOCDF?.unit }}</td>
+                </tr>
+                <tr>
+                    <th><b>Fiber</b></th>
+                    <td>{{ listOfIngredients.totalNutrients.FIBTG?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.FIBTG?.unit }}</td>
+                </tr>
+                <tr>
+                    <th><b>Suger</b></th>
+                    <td>{{ listOfIngredients.totalNutrients.SUGAR?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.SUGAR?.unit }}</td>
+                </tr>
+                <tr>
+                    <th><b>Protein</b></th>
+                    <td>{{ listOfIngredients.totalNutrients.PROCNT?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.PROCNT?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Vitamin E</th>
+                    <td>{{ listOfIngredients.totalNutrients.TOCPHA?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.TOCPHA?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Vitamin A</th>
+                    <td>{{ listOfIngredients.totalNutrients.VITA_RAE?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.VITA_RAE?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Vitamin B6</th>
+                    <td>{{ listOfIngredients.totalNutrients.VITB6A?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.VITB6A?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Vitamin B12</th>
+                    <td>{{ listOfIngredients.totalNutrients.VITB12?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.VITB12?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Vitamin C</th>
+                    <td>{{ listOfIngredients.totalNutrients.VITC?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.VITC?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Vitamin D</th>
+                    <td>{{ listOfIngredients.totalNutrients.VITD?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.VITD?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Calcium</th>
+                    <td>{{ listOfIngredients.totalNutrients.CA?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.CA?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Iron</th>
+                    <td>{{ listOfIngredients.totalNutrients.FE?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.FE?.unit }}</td>
+                </tr>
+                <tr>
+                    <th>Potassium</th>
+                    <td>{{ listOfIngredients.totalNutrients.K?.quantity.toFixed(2) }} {{
+                        listOfIngredients.totalNutrients.K?.unit }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <button type="text" class="btn friendy-btn-close" (click)="show()">
+        Analyze
+    </button>
+</section>

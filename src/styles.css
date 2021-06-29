@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+}
+button {
+    background-color: #7aca25;
+    border: 1px solid #7aca25;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+button:disabled  {
+    opacity: .5;
+}
+@media (max-width: 420px){
+    app-ingredient-list, app-nutrition-list {
+        width: 100%;
+    }
+}

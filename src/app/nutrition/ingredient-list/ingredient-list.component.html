@@ -1,0 +1,22 @@
+<div class="ingredient">
+    <h1>
+        Nutrition Analysis
+    </h1>
+    <p>Enter an ingredient list list for what you are cooking, like <span class="example">"1 cup rice, 10 oz
+            chickpeas"</span>, etc.<br>Enter each ingredient on a new line.</p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <textarea class="form-control" formControlName="ingredients" cols="30" rows="10" placeholder="1 cup rice"
+            [ngClass]="{ 'is-invalid': submitted && f.ingredients.errors || worngIngredients}" required></textarea>
+
+        <div *ngIf="submitted && f.ingredients.errors" class="invalid-feedback">
+            <div *ngIf="f.ingredients.errors.required">Enter your gredients is required</div>
+        </div>
+
+        <div *ngIf="worngIngredients" class="invalid-feedback">
+            <div *ngIf="worngIngredients">Wrong gredients, rewrite valid data</div>
+        </div>
+        <button type="submit" class="btn friendy-btn-close" [disabled]="!form.dirty">
+            Analyze
+        </button>
+    </form>
+</div>

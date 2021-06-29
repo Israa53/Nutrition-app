@@ -1,0 +1,42 @@
+.ingredient {
+    background: #fff;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.27);
+    padding: 30px;
+    margin: 30px;
+}
+.example {
+    font-weight: bold;
+}
+h1, p .example {
+    color: #7aca25;
+} 
+textarea, .ingredient{
+    border-radius: 15px;
+}
+textarea {
+    font-size: 15px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: -webkit-fill-available;
+}
+textarea:focus-visible {
+    outline: unset;
+}
+
+/* button:hover {
+    background-color: #5a941c;
+} */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.is-invalid {
+    border: 1px solid rgb(211, 61, 61);
+}
+.invalid-feedback {
+    color:rgb(211, 61, 61);
+    width: 100%;
+    font-size: 14px;
+}

@@ -1,0 +1,8 @@
+.nutrition-app {
+    background: url(../assets/images/bg11.jpg) no-repeat center;
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
